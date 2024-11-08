@@ -168,4 +168,3 @@ curl --resolve "<ingress-host>:80:<ingress-address>" -i http://<ingress-host>/
 
 - Your application is deployed using a StatefulSet
 - A ConfigMap is used to pass any environment variables needed by your application
-- A PersistentVolumeClaim
