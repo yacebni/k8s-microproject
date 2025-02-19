@@ -158,7 +158,7 @@ curl --resolve "<ingress-host>:80:<ingress-address>" -i http://<ingress-host>/
 
 - Your ingress is accessible through https
 
-- J'ai utilisé mkcert (sous windows) pour généré les secrets, commandes faites :
+- J'ai utilisé mkcert (sous windows) pour généré les secrets (non push sur git), commandes faites :
  ```
  minikube addons enable ingress
 
