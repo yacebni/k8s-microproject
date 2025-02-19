@@ -2,15 +2,22 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: k8s-microproject-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: "nginx"
 spec:
+  tls:
+  - hosts:
+    - k8s-microproject.lan
+    secretName: k8s-microproject-tls
   rules:
-        - host: k8s-microproject.lan
-          http:
-            paths:
-              - path: /
-                pathType: Prefix
-                backend:
-                  service:
-                    name: k8s-microproject-service
-                    port:
-                      number: 8080
+    - host: k8s-microproject.lan
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: k8s-microproject-service
+                port:
+                  number: 8080
