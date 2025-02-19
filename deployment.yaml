@@ -26,6 +26,9 @@ spec:
           volumeMounts:
             - name: logs-volume
               mountPath: /app/logs
+          envFrom:
+            - configMapRef:
+                name: k8s-microproject-config
       volumes:
         - name: logs-volume
           persistentVolumeClaim:
